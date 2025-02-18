@@ -3,6 +3,7 @@ package com.es.apirest_mongodb.controller
 import com.es.apirest_mongodb.dto.LoginUsuarioDTO
 import com.es.apirest_mongodb.dto.UsuarioDTO
 import com.es.apirest_mongodb.dto.UsuarioRegisterDTO
+import com.es.apirest_mongodb.exceptions.UnauthorizedException
 import com.es.apirest_mongodb.service.TokenService
 import com.es.apirest_mongodb.service.UsuarioService
 import org.springframework.beans.factory.annotation.Autowired
