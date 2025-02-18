@@ -1,4 +1,4 @@
-package com.es.apimongo.ApiRestMongoDB
+package com.es.apirest_mongodb
 
 import org.springframework.boot.builder.SpringApplicationBuilder
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer

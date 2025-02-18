@@ -1,4 +1,4 @@
-package com.es.apimongo.ApiRestMongoDB
+package com.es.apirest_mongodb
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
