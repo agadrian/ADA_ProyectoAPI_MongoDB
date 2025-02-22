@@ -50,7 +50,7 @@ class UsuarioService : UserDetailsService {
             throw BadRequestException("Uno o más campos vacíos")
         }
 
-        // Fran ha comprobado que el usuario existe previamente
+        // Comprobar si el usuario existe previamente
         if(usuarioRepository.findByUsername(usuarioInsertadoDTO.username).isPresent) {
             throw Exception("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
         }
@@ -66,7 +66,7 @@ class UsuarioService : UserDetailsService {
         }
 
         // Comprobar el EMAIL
-
+        //TODO
 
         // Comprobar la provincia
         val datosProvincias = externalApiService.obtenerProvinciasDesdeApi()
@@ -113,6 +113,5 @@ class UsuarioService : UserDetailsService {
             usuario.email,
             usuario.roles
         )
-
     }
 }
