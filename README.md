@@ -112,3 +112,58 @@ Se aplicará las siguientes restricciones:
 - Hashing de contraseñas mediante bcrypt.
 - Roles y permisos para restringir acciones.
 - Validación de datos para evitar inyecciones y errores.
+
+
+# Pruebas gestión usuarios
+
+### Register
+
+##### Registro correcto
+
+- Registro desde insmonia USER
+![Prueba 1](src/main/resources/screenshots/login1.png)
+
+
+- Registro desde insmonia ADMIN
+![Prueba 1.2](src/main/resources/screenshots/login1.2.png)
+
+
+- Registro desde interfaz (USER por defecto)
+![Prueba 1.4](src/main/resources/screenshots/login1.4.png)
+
+
+- Inserción en MongoDB de los diferentes usuarios
+![Prueba 1.5](src/main/resources/screenshots/login1.5.png)
+
+
+##### Excepciones registro
+- Nombre de Rol incorrecto
+![Prueba](src/main/resources/screenshots/login1.5.png)
+
+
+- Nombre ya en uso / Correo ya en uso
+![Prueba](src/main/resources/screenshots/login2.png)
+![Prueba](src/main/resources/screenshots/login2.1.png)
+
+- Provincia, municipio no encontrado
+![Prueba](src/main/resources/screenshots/login2.2.png)
+![Prueba](src/main/resources/screenshots/login2.3.png)
+
+
+### Login
+
+##### Login Correcto
+
+- Login insomnia
+![Prueba](src/main/resources/screenshots/login3.png)  
+
+
+- Login interfaz
+![Prueba](src/main/resources/screenshots/login3.1.png)
+![Prueba](src/main/resources/screenshots/login3.2.png)
+
+
+##### Excepciones Login
+
+- Credenciales incorrectas
+![Prueba](src/main/resources/screenshots/login4.png)
