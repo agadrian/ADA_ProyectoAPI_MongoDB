@@ -2,6 +2,7 @@ package com.es.apirest_mongodb.service
 
 import com.es.apirest_mongodb.dto.UsuarioDTO
 import com.es.apirest_mongodb.dto.UsuarioRegisterDTO
+import com.es.apirest_mongodb.exceptions.AlreadyExistsException
 import com.es.apirest_mongodb.exceptions.BadRequestException
 import com.es.apirest_mongodb.exceptions.UnauthorizedException
 import com.es.apirest_mongodb.model.Usuario
@@ -12,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import kotlin.jvm.Throws
 
 @Service
 class UsuarioService : UserDetailsService {
@@ -52,21 +54,23 @@ class UsuarioService : UserDetailsService {
 
         // Comprobar si el usuario existe previamente
         if(usuarioRepository.findByUsername(usuarioInsertadoDTO.username).isPresent) {
-            throw Exception("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
+            throw AlreadyExistsException("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
         }
 
         // comprobar que ambas passwords sean iguales
         if(usuarioInsertadoDTO.password != usuarioInsertadoDTO.passwordRepeat) {
-            throw BadRequestException("Las contrasenias no coinciden")
+            throw BadRequestException("Las contraseñas no coinciden")
         }
 
         // Comprobar el ROL
         if(usuarioInsertadoDTO.rol != null && usuarioInsertadoDTO.rol != "USER" && usuarioInsertadoDTO.rol != "ADMIN" ) {
-            throw BadRequestException("ROL: ${usuarioInsertadoDTO.rol} incorrecto")
+            throw BadRequestException("ROL '${usuarioInsertadoDTO.rol}' incorrecto")
         }
 
         // Comprobar el EMAIL
-        //TODO
+        if (usuarioRepository.findByEmail(usuarioInsertadoDTO.email).isPresent) {
+            throw AlreadyExistsException("Email '${usuarioInsertadoDTO.email} ya está en uso'")
+        }
 
         // Comprobar la provincia
         val datosProvincias = externalApiService.obtenerProvinciasDesdeApi()
