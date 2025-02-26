@@ -171,7 +171,7 @@ Se aplicará las siguientes restricciones:
 
 ### Login
 
-##### Login Correcto
+#### Login Correcto
 
 - Login insomnia
 
@@ -185,7 +185,7 @@ Se aplicará las siguientes restricciones:
 ![Prueba](src/main/resources/screenshots/login3.2.png)
 
 
-##### Excepciones Login
+#### Excepciones Login
 
 - Credenciales incorrectas
 
@@ -206,7 +206,7 @@ Se aplicará las siguientes restricciones:
 ------------
 
 
-##### Crear tarea 
+#### Crear tarea 
 
 - Datos válidos
 
@@ -222,7 +222,7 @@ Se aplicará las siguientes restricciones:
 
 
 
-##### Obtener una tarea del usuario mediante la ID
+#### Obtener una tarea del usuario mediante la ID
 
 - Id válida
 
@@ -237,13 +237,13 @@ Se aplicará las siguientes restricciones:
 ![Prueba](src/main/resources/screenshots/tarea2.2.png)
 
 
-##### Obtener una tarea del usuario mediante la ID
+#### Obtener una tarea del usuario mediante la ID
 
 ![Prueba](src/main/resources/screenshots/tarea3.png)
 
 
 
-##### Cambiar el estado de una tarea
+#### Cambiar el estado de una tarea
 
 - Id de una tarea propia (Cada vez que se ejecuta cambia de "PENDIENTE" a "COMPLETADA" y viceversa)
 
@@ -260,7 +260,7 @@ Se aplicará las siguientes restricciones:
 
 
 
-##### Eliminar una tarea propia mediante su ID
+#### Eliminar una tarea propia mediante su ID
 
 - Id de una tarea propia
 
@@ -276,7 +276,7 @@ Se aplicará las siguientes restricciones:
 
 
 
-##### Eliminar todas las tareas propias
+#### Eliminar todas las tareas propias
 
 - Cuando tiene tareas propias
 
@@ -296,7 +296,7 @@ Se aplicará las siguientes restricciones:
 **En este apartado también como he mostrado antes en el Config, se comprueba en todo momento que el usuario tenga el rol ADMIN. Para no repetir las pruebas, la pondré una sola vez en el siguiente apartado de obtener todas las tareas del sistema.**
 
 
-##### Obtener todas las tareas del sistema
+#### Obtener todas las tareas del sistema
 
 - Usando el token de un usuario "ADMIN"
 
@@ -307,7 +307,7 @@ Se aplicará las siguientes restricciones:
 ![Prueba](src/main/resources/screenshots/tarea7.1.png)
 
 
-##### Obtener todas las tareas de un usuario
+#### Obtener todas las tareas de un usuario
 
 - Cuando tiene tareas
 
@@ -319,7 +319,7 @@ Se aplicará las siguientes restricciones:
 
 
 
-##### Crear tarea para un usuario cualquiera
+#### Crear tarea para un usuario cualquiera
 
 - Id de usuario válida
 
@@ -337,7 +337,7 @@ Se aplicará las siguientes restricciones:
 
 
 
-##### Cambiar estado de una tarea cualquiera de un usuario cualquiera
+#### Cambiar estado de una tarea cualquiera de un usuario cualquiera
 
 
 - Usando Id de un usuario cualquiera y Id de una tarea suya
@@ -359,7 +359,7 @@ Se aplicará las siguientes restricciones:
 
 
 
-##### Eliminar una tarea concreta de un usuario cualquiera
+#### Eliminar una tarea concreta de un usuario cualquiera
 
 - Id de usuario y Id de una tarea suya
 
@@ -369,7 +369,7 @@ Se aplicará las siguientes restricciones:
 
 ![Prueba](src/main/resources/screenshots/tarea11.1.png)
 
-** Igual que antes, en caso de alguna Id no válida, salta la misma excepción (NotFoundException) **
+**Igual que antes, en caso de alguna Id no válida, salta la misma excepción (NotFoundException)**
 
 
 #### Eliminar todas las tareas de un usuario cualquiera
