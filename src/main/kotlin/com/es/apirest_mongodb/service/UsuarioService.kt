@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
-import kotlin.jvm.Throws
+import java.util.*
 
 @Service
 class UsuarioService : UserDetailsService {
@@ -27,7 +27,7 @@ class UsuarioService : UserDetailsService {
 
 
     override fun loadUserByUsername(username: String?): UserDetails {
-        var usuario: Usuario = usuarioRepository
+        val usuario: Usuario = usuarioRepository
             .findByUsername(username!!)
             .orElseThrow {
                 UnauthorizedException("$username no existente")
@@ -74,7 +74,7 @@ class UsuarioService : UserDetailsService {
 
         // Comprobar la provincia
         val datosProvincias = externalApiService.obtenerProvinciasDesdeApi()
-        var cpro: String = ""
+        var cpro = ""
         if(datosProvincias != null) {
             if(datosProvincias.data != null) {
                 val provinciaEncontrada = datosProvincias.data.stream().filter {
@@ -117,5 +117,19 @@ class UsuarioService : UserDetailsService {
             usuario.email,
             usuario.roles
         )
+    }
+
+
+
+    fun getUserByUsername(
+        username: String
+    ): Optional<Usuario> {
+        return usuarioRepository.findByUsername(username)
+    }
+
+    fun getUserById(
+        id: String
+    ): Optional<Usuario>{
+        return usuarioRepository.findById(id)
     }
 }
