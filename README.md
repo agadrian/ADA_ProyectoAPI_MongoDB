@@ -192,6 +192,7 @@ Se aplicará las siguientes restricciones:
 ![Prueba](src/main/resources/screenshots/login4.png)
 
 - Credenciales incorrecta interfaz
+  
 ![Prueba](src/main/resources/screenshots/loginErrorInterfaz.png) 
 
 ********
