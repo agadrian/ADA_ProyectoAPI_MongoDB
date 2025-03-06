@@ -1,7 +1,3 @@
-.env.properties
-*.pem
-*.pdf
-
 HELP.md
 .gradle
 build/*
@@ -43,3 +39,7 @@ out/
 
 ### Kotlin ###
 .kotlin
+
+.env.properties
+*.pem
+*.pdf
