@@ -35,6 +35,9 @@ class AdminTareaController {
     fun getAllUserTasks(
         @PathVariable usuarioId: String
     ): ResponseEntity<List<TareaDTO>>{
+
+        if (usuarioId.isBlank()) throw BadRequestException("La id no puede ser vacía")
+
         val tareas = tareaService.getAllUsersTasks(usuarioId)
 
         return ResponseEntity(tareas, HttpStatus.OK)
